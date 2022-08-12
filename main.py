@@ -1,13 +1,7 @@
 from fastapi import FastAPI
-
 from pydantic import BaseModel
 
 app = FastAPI()
-
-# Rota Raiz
-@app.get("/")
-def raiz():
-    return {"Ola": "Mundo"}
 
 # Criar model
 class Usuario(BaseModel):
@@ -16,7 +10,6 @@ class Usuario(BaseModel):
     senha: str
 
 # Criar base de dados
-
 base_de_dados = [
     Usuario(id=1, email="roger@roger.com.br", senha="roger123"),
     Usuario(id=2, email="teste@teste.com.br", senha="teste123")
